@@ -13,7 +13,7 @@ echo 'within <project/> of your Java/Maven project''s "pom.xml" file.'
 set -x
 NAME=`mvn -q -DforceStdout help:evaluate -Dexpression=project.name`
 echo "$NAME"
-sed 's/[0m//g' $NAME
+sed 's/\[0m//g' $NAME
 echo "$NAME" 
 set +x
 
@@ -22,7 +22,7 @@ echo 'extracts the value of the <version/> element within <project/> instead.'
 set -x
 VERSION=`mvn -q -DforceStdout help:evaluate -Dexpression=project.version`
 echo "$VERSION"
-sed 's/[0m//g' $VERSION
+sed 's/\[0m//g' $VERSION
 echo "$VERSION"
 set +x
 
